@@ -136,8 +136,8 @@ button { cursor: pointer; background: none; border: none; }
   letter-spacing: 0.12em;
   color: var(--text-grey);
   text-align: center;
+  margin-left: 1rem;
 }
-
 .hero-tags {
   display: flex;
   flex-direction: column;
