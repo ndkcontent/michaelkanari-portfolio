@@ -408,7 +408,7 @@ button { cursor: pointer; background: none; border: none; }
 .contact-icons {
   display: flex;
   gap: 2.5rem;
-  margin-top: 3rem;
+  margin-top: 1.5rem;
 }
 
 .contact-icon-link {
@@ -448,6 +448,13 @@ button { cursor: pointer; background: none; border: none; }
 .contact-page > * {
   position: relative;
   z-index: 1;
+}
+
+contact-description {
+  font-size: 0.95rem;
+  color: var(--text-grey);
+  margin-top: 1rem;
+  letter-spacing: 0.22em;
 }
 
 .contact-page::before {
