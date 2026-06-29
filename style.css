@@ -511,23 +511,32 @@ contact-description {
     z-index: 999;
   }
 
-  .hero-tags {
-    display: flex;
-    flex-direction: column;
-    gap: 1.6rem;
-    text-align: center;
-  }
-
-  .hero-tags li {
-    font-size: 0.85rem;
-    font-weight: 300;
-    letter-spacing: 0.12em;
-    color: var(--grey-500);
-    white-space: nowrap;
+ .hero-name {
+    display: none;
   }
 
   .hero-content {
-    gap: 1.75rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+  }
+
+  .hero-tags {
+    width: 100%;
+    gap: 2.25rem;
+  }
+
+  .hero-tags li {
+    width: 100%;
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 300;
+    letter-spacing: 0.14em;
+    color: var(--grey-500);
+    white-space: nowrap;
   }
 
   .gallery-heading {
@@ -573,8 +582,6 @@ contact-description {
     width: 56px;
     height: 56px;
   }
-  .hero-content { flex-direction: column; align-items: flex-start; justify-content: center; gap: 2.5rem; }
-  .hero-tags { align-items: flex-start; text-align: left; }
   .portfolio-grid { grid-template-columns: 1fr; }
   .portfolio-card { height: 50vh; }
 }
