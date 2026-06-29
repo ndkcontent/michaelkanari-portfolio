@@ -293,7 +293,7 @@ button { cursor: pointer; background: none; border: none; }
 .site-footer {
   padding: 2rem 0;
   text-align: center;
-  border-top: 1px solid rgba(255,255,255,0.08);
+  background-color: transparent;
 }
 .site-footer p {
   font-size: 0.7rem;
@@ -386,6 +386,85 @@ button { cursor: pointer; background: none; border: none; }
   color: var(--text-grey);
 }
 
+/* ── Contact Page ──────────────────────────── */
+
+.contact-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--text-grey);
+  margin-bottom: 0.75rem;
+}
+
+.contact-headline {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(2rem, 4.2vw, 3.4rem);
+  line-height: 1.25;
+  color: var(--white);
+}
+
+.contact-icons {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.contact-icon-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+  color: var(--text-grey);
+  transition: color var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.contact-icon-link svg {
+  width: 26px;
+  height: 26px;
+}
+
+.contact-icon-link:hover {
+  color: var(--white);
+  border-color: rgba(255,255,255,0.4);
+  transform: translateY(-3px);
+}
+
+.contact-page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 2rem;
+  min-height: calc(100vh - var(--nav-height));
+}
+
+.contact-page > * {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-page::before {
+  content: '';
+  position: absolute;
+  inset: -100px;
+  background-image: url('home.png');
+  background-size: cover;
+  background-position: center;
+  filter: blur(28px) brightness(0.5);
+  z-index: 0;
+
+.site-footer {
+  position: relative;
+  z-index: 1;
+}
+
 /* ── Mobile ─────────────────────────────────── */
 @media (max-width: 900px) {
   .nav-links, .nav-socials { display: none; }
@@ -436,6 +515,14 @@ button { cursor: pointer; background: none; border: none; }
     flex: none;
     width: 100%;
     height: 280px;
+  }
+
+  .contact-icons {
+    gap: 1.5rem;
+  }
+  .contact-icon-link {
+    width: 56px;
+    height: 56px;
   }
   .hero-content { flex-direction: column; align-items: flex-start; justify-content: center; gap: 2.5rem; }
   .hero-tags { align-items: flex-start; text-align: left; }
