@@ -7,7 +7,7 @@
   --white:      #ffffff;
   --text-grey:  #757575;
   --grey-300:   rgba(255,255,255,0.85);
-  --grey-500:   rgba(255,255,255,0.55);
+  --grey-500:   rgba(255,255,255,0.65);
   --grey-700:   rgba(255,255,255,0.3);
   --font-serif: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-sans:  'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -28,6 +28,22 @@ img { display: block; max-width: 100%; height: auto; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
 button { cursor: pointer; background: none; border: none; }
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+.hero-content,
+.hero-content > * {
+  min-width: 0;
+}
+
+.hero-tags,
+.hero-tags li {
+  max-width: 100%;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
 
 
 /* ── Navigation ─────────────────────────── */
@@ -238,7 +254,9 @@ button { cursor: pointer; background: none; border: none; }
   font-size: 1.4rem;
   font-weight: 500;
   letter-spacing: 0.02em;
-  color: var(--white);
+  color: var(--grey-500);
+  text-transform: uppercase;
+  letter-spacing: 0.78em;
 }
 
 /* ── Gallery / Category Pages ──────────────── */
@@ -248,10 +266,13 @@ button { cursor: pointer; background: none; border: none; }
 
 .gallery-heading {
   font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 300;
+  font-size: clamp(.8rem, 1vw, 2.4rem);
   color: var(--white);
   margin: 1.5rem 4rem 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.78em;
 }
 
 .masonry-grid {
