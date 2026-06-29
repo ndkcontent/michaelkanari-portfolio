@@ -487,11 +487,12 @@ contact-description {
   background-position: center;
   filter: blur(28px) brightness(0.5);
   z-index: 0;
-
+}
 .site-footer {
   position: relative;
   z-index: 1;
 }
+
 
 /* ── Mobile ─────────────────────────────────── */
 @media (max-width: 900px) {
@@ -556,5 +557,4 @@ contact-description {
   .hero-tags { align-items: flex-start; text-align: left; }
   .portfolio-grid { grid-template-columns: 1fr; }
   .portfolio-card { height: 50vh; }
-}
 }
