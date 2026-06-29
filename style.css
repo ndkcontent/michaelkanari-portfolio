@@ -529,3 +529,4 @@ button { cursor: pointer; background: none; border: none; }
   .portfolio-grid { grid-template-columns: 1fr; }
   .portfolio-card { height: 50vh; }
 }
+}
