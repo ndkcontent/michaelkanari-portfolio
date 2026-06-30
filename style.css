@@ -290,6 +290,114 @@ html, body {
   break-inside: avoid;
 }
 
+.gallery-item {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0 0 5.5rem;
+  border: none;
+  background: none;
+  border-radius: 25px;
+  overflow: hidden;
+  cursor: pointer;
+  break-inside: avoid;
+}
+
+.gallery-item img {
+  width: 100%;
+  display: block;
+  filter: brightness(0.9);
+  transition: transform 0.7s cubic-bezier(0.4,0,0.2,1), filter 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.7);
+}
+
+/* ── Next Project Button ───────────────────── */
+.next-project {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin: 3rem 4rem 2rem;
+  padding-bottom: 1rem;
+}
+
+.next-project-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--grey-300);
+  transition: color var(--transition), gap var(--transition);
+}
+
+.next-project-link:hover {
+  color: var(--white);
+  gap: 0.9rem;
+}
+
+.next-project-link svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+/* ── Lightbox ──────────────────────────────── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: 2rem;
+}
+
+.lightbox.active {
+  display: flex;
+}
+
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+  position: absolute;
+  background: none;
+  border: none;
+  color: var(--white);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.lightbox-close {
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 2.2rem;
+}
+
+.lightbox-prev,
+.lightbox-next {
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2.5rem;
+  padding: 1rem;
+}
+
+.lightbox-prev { left: 0.5rem; }
+.lightbox-next { right: 0.5rem; }
+
 /* ── Skeleton pages (About / Contact) ──────── */
 .skeleton-section {
   display: flex;
@@ -542,6 +650,11 @@ contact-description {
   .gallery-heading {
     margin: 1.5rem 1.5rem 1.5rem;
   }
+
+  .next-project {
+    margin: 2rem 1.5rem 1.5rem;
+  }
+
   .masonry-grid {
     column-count: 1;
     margin: 0 1.5rem;
