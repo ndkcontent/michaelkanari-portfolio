@@ -435,7 +435,7 @@ html, body {
 .about-page {
   position: relative;
   min-height: 100vh;
-  background-image: url('MK1E.png');
+  background-image: url('MK1.png');
   background-size: cover;
   background-position: left center;
   display: flex;
