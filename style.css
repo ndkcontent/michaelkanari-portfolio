@@ -339,6 +339,33 @@ html, body {
   break-inside: avoid;
 }
 
+/* ── Video Grid (Films) ────────────────────── */
+.video-grid {
+  display: flex;
+  gap: 5.5rem;
+  margin: 0 4rem;
+  align-items: flex-start;
+}
+.video-col {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+.video-col video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 5.5rem;
+  border-radius: 25px;
+  background: var(--black);
+}
+
+.video-col video:last-child {
+  margin-bottom: 0;
+}
+
 .gallery-item {
   display: block;
   width: 100%;
@@ -452,7 +479,6 @@ html, body {
 .site-footer {
   padding: 2rem 0;
   text-align: center;
-  background-color: transparent;
 }
 .site-footer p {
   font-size: 0.7rem;
@@ -533,11 +559,19 @@ html, body {
   gap: 0.4rem;
 }
 
-.about-subheading {
+.about-subheading{
   font-size: 0.9rem;
-  font-weight: 500;
+  font-weight: 200;
   letter-spacing: 0.04em;
   color: var(--white);
+}
+
+.about-subheading-2{
+  font-size: 0.9rem;
+  font-weight: 200;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  text-align: left;
 }
 
 .about-block-text {
@@ -550,6 +584,9 @@ html, body {
   font-size: 0.87rem;
   letter-spacing: 0.02em;
   color: var(--grey-300);
+  text-decoration: none;
+  letter-spacing: 0.38em;
+  text-align: left;
 }
 
 .about-clients-note {
