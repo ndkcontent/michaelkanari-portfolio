@@ -162,12 +162,13 @@ html, body {
 }
 .hero-tags li {
   font-size: 1.25rem;
-  font-weight: 300;
+  font-weight: 200;
   letter-spacing: 0.78em;
   text-transform: uppercase;
   color: var(--text-grey);
   white-space: nowrap;
 }
+
 .hero-footer-mini {
   position: absolute;
   bottom: 1.75rem;
@@ -199,6 +200,11 @@ html, body {
 .hero-tags {
   opacity: 0;
   animation: blurIn 2.0s cubic-bezier(0.4,0,0.2,1) 1.50s forwards;
+}
+
+.hero-tags-link {
+  opacity: 0;
+  animation: blurIn 2.0s cubic-bezier(0.4,0,0.2,1) 1.75s forwards;
 }
 
 .hero-footer-mini {
