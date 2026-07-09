@@ -37,7 +37,7 @@
     <div class="video-grid">
       <div class="video-col">
         <video class="masonry-video" muted loop playsinline autoplay>
-            <source src="films/showreel_test.mp4" type="video/mp4">
+          <source src="films/showreel_test.mp4" type="video/mp4">
         </video>
         <video class="masonry-video" muted loop playsinline autoplay>
           <source src="films/mad-kenya-hq.mp4" type="video/mp4">
@@ -53,21 +53,28 @@
       </div>
     </div>
 
-      <div class="next-project">
-        <a href="people.html" class="next-project-link">
-          Previous Project
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
-      </div>
+    <div class="next-project">
+      <a href="people.html" class="next-project-link">
+        Previous Project
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </a>
     </div>
   </section>
 
   <footer class="site-footer">
     <p>© 2026 by KIHAGI</p>
   </footer>
+
+  <!-- ── Lightbox ───────────────────────────── -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous">&#8249;</button>
+    <button class="lightbox-next" aria-label="Next">&#8250;</button>
+    <div class="lightbox-content" id="lightboxContent"></div>
+  </div>
 
   <script src="main.js"></script>
 </body>
