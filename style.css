@@ -723,6 +723,18 @@ contact-description {
     z-index: 999;
   }
 
+  @media (min-width: 901px) and (max-width: 1366px) {
+  .about-page {
+    background-image: url('MK1-portrait.png');
+  }
+}
+
+@media (max-width: 900px) {
+  .about-page {
+    background-image: url('MK1-portrait.png');
+  }
+}
+
  .hero-name {
     display: none;
   }
