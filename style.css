@@ -725,13 +725,13 @@ contact-description {
 
   @media (min-width: 901px) and (max-width: 1366px) {
   .about-page {
-    background-image: url('MK1-portrait.png');
+    background-image: url('MK0.JPG');
   }
 }
 
 @media (max-width: 900px) {
   .about-page {
-    background-image: url('MK1-portrait.png');
+    background-image: url('MK0.JPG');
   }
 }
 
