@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  
 
   /* ── Mobile nav toggle ──────────────────── */
   const toggle = document.querySelector('.nav-toggle');
@@ -58,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
         video.setAttribute('controls', '');
         video.setAttribute('playsinline', '');
         video.src = sourceEl ? sourceEl.getAttribute('src') : '';
-        video.muted = false;
+        video.muted = true;
         content.appendChild(video);
         video.play().catch(() => {});
       }

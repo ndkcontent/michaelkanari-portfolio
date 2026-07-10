@@ -325,7 +325,7 @@ html, body {
   font-weight: 300;
   font-size: clamp(.8rem, 1vw, 2.4rem);
   color: var(--white);
-  margin: 1.5rem 4rem 2rem;
+  margin: calc(var(--nav-height) + 1.5rem) 4rem 2rem;  /* ← was: 1.5rem 4rem 2rem */
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.78em;
@@ -345,56 +345,50 @@ html, body {
   break-inside: avoid;
 }
 
-/* ── Video Grid (Films) ────────────────────── */
-.video-grid {
-  display: flex;
-  gap: 5.5rem;
-  margin: 0 4rem;
-  align-items: flex-start;
+/* ── Films: Feature + BTS Grid ─────────────── */
+.film-feature {
+  max-width: 900px;
+  margin: 3rem auto 5rem;
+  padding: 0 4rem;
+  box-sizing: border-box;
 }
-.video-col {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  min-width: 0;
-}
-.video-col video {
+
+.film-feature-video {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
   display: block;
-  margin-bottom: 5.5rem;
-  border-radius: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
   background: var(--black);
 }
 
-.video-col video:last-child {
-  margin-bottom: 0;
+.gallery-subheading {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: clamp(.7rem, 0.9vw, 1.6rem);
+  color: var(--white);
+  margin: 0 4rem 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.6em;
 }
 
-.gallery-item {
-  display: block;
+.bts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem 5.5rem;
+  margin: 0 4rem;
+}
+
+.bts-video {
   width: 100%;
-  padding: 0;
-  margin: 0 0 5.5rem;
-  border: none;
-  background: none;
-  border-radius: 25px;
-  overflow: hidden;
-  cursor: pointer;
-  break-inside: avoid;
-}
-
-.gallery-item img {
-  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   display: block;
-  filter: brightness(0.9);
-  transition: transform 0.7s cubic-bezier(0.4,0,0.2,1), filter 0.4s ease;
-}
-
-.gallery-item:hover img {
-  transform: scale(1.05);
-  filter: brightness(0.7);
+  border: 1px solid rgba(255,255,255,0.15);
+  background: var(--black);
+  border-radius: 10%;
 }
 
 /* ── Next Project Button ───────────────────── */
@@ -763,6 +757,19 @@ contact-description {
     flex: none;
     min-height: auto;
     overflow-y: auto;
+  }
+
+  .film-feature {
+    padding: 0 1.5rem;
+    margin: 1.5rem auto 3rem;
+  }
+  .gallery-subheading {
+    margin: 0 1.5rem 1.5rem;
+  }
+  .bts-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 0 1.5rem;
   }
   .about-page {
     background-position: center top;
