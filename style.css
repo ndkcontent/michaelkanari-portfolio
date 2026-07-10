@@ -391,6 +391,17 @@ html, body {
   border-radius: 10%;
 }
 
+.video-caption {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: clamp(.55rem, 0.7vw, 0.85rem);
+  color: var(--grey-500);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.35em;
+  margin-top: 1.1rem;
+}
+
 /* ── Next Project Button ───────────────────── */
 .next-project {
   display: flex;

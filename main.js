@@ -111,6 +111,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ── Films: native controls only on hover/tap ── */
+  const isTouchDevice = window.matchMedia('(hover: none)').matches;
+
+  document.querySelectorAll('.film-feature-video, .bts-video').forEach(video => {
+    video.controls = false;
+
+    if (!isTouchDevice) {
+      video.addEventListener('mouseenter', () => { video.controls = true; });
+      video.addEventListener('mouseleave', () => { video.controls = false; });
+    } else {
+      let hideTimer;
+      video.addEventListener('touchstart', () => {
+        video.controls = true;
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(() => { video.controls = false; }, 3000);
+      }, { passive: true });
+    }
+  });
+
   const galleryImages = Array.from(document.querySelectorAll('.masonry-grid img'));
   const galleryVideos = Array.from(document.querySelectorAll('.video-col video'));
 
