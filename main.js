@@ -21,6 +21,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  /* ── Home: expand/collapse details ──────────── */
+  const aboutToggle = document.getElementById('aboutToggle');
+  const aboutDetails = document.getElementById('aboutDetails');
+  if (aboutToggle && aboutDetails) {
+    const toggleLabel = aboutToggle.querySelector('.about-toggle-label');
+    aboutToggle.addEventListener('click', () => {
+      const isOpen = aboutDetails.classList.toggle('open');
+      aboutToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      toggleLabel.textContent = isOpen ? 'Collapse' : 'Expand';
+    });
+  }
+
   /* ── Lightbox (People + Films) ─────────────── */
   function initLightbox(items, type) {
     if (!items.length) return;

@@ -227,7 +227,7 @@ html, body {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-image: url('MK6.png');
+  background-image: url('MK0.JPG');
   background-size: cover;
   background-position: center 22%;
 }
@@ -325,7 +325,7 @@ html, body {
   font-weight: 300;
   font-size: clamp(.8rem, 1vw, 2.4rem);
   color: var(--white);
-  margin: calc(var(--nav-height) + 1.5rem) 4rem 2rem;  /* ← was: 1.5rem 4rem 2rem */
+  margin: calc(var(--nav-height) + 1.5rem) 4rem 2rem;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.78em;
@@ -512,30 +512,36 @@ html, body {
   color: var(--text-grey);
 }
 
-/* ── About Page ────────────────────────────── */
+/* ── Home Page (new design) ─────────────────── */
 .about-page {
   position: relative;
   min-height: 100vh;
-  background-image: url('MK1.png');
+  background-image: url('home.png');
   background-size: cover;
-  background-position: left center;
+  background-position: center center;
   display: flex;
   align-items: center;
   padding-top: var(--nav-height);
   box-sizing: border-box;
 }
 
-.about-overlay {
+
+.about-hero-name {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    rgba(0,0,0,0.05) 0%,
-    rgba(0,0,0,0.1) 38%,
-    rgba(0,0,0,0.45) 55%,
-    rgba(0,0,0,0.35) 100%
-  );
-  pointer-events: none;
+  left: 19%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  font-family: var(--font-serif);
+  font-weight: 270;
+  font-size: clamp(5rem, 4.2vw, 4rem);
+  line-height: 1.15;
+  letter-spacing: 0.1em;
+  color: var(--text-grey);
+  text-align: center;
+  opacity: 0;
+  animation: blurIn 2.0s cubic-bezier(0.4,0,0.2,1) 0.3s forwards;
+  margin-left: 2.5rem;
 }
 
 .about-bg-content {
@@ -546,7 +552,48 @@ html, body {
   justify-content: flex-end;
   padding: 4rem;
   box-sizing: border-box;
-  margin-bottom: 20rem;
+  margin-left: 25rem;
+  margin-bottom: 6rem;
+}
+
+.about-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-start;
+  color: var(--text-grey);
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color var(--transition);
+  animation: blurIn 2.0s cubic-bezier(0.4,0,0.2,1) 0.3s forwards;
+}
+.about-toggle:hover {
+  color: var(--white);
+}
+.about-toggle-icon {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.35s ease;
+}
+.about-toggle[aria-expanded="true"] .about-toggle-icon {
+  transform: rotate(180deg);
+}
+
+.about-details {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.5s ease;
+}
+.about-details.open {
+  grid-template-rows: 1fr;
+}
+.about-details-inner {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
 
 .about-text {
@@ -566,16 +613,19 @@ html, body {
 
 .about-headline {
   font-family: var(--font-serif);
-  font-weight: 300;
-  font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+  text-transform: uppercase;
+  font-weight: 200;
+  font-size: clamp(1.5rem, 3.2vw, 2.8rem);
+  animation: blurIn 2.0s cubic-bezier(0.4,0,0.2,1) 0.3s forwards;
   line-height: 1.2;
-  color: var(--white);
+  color: var(--text-grey);
+  letter-spacing: 0.3em
 }
 
 .about-bio {
   font-size: 0.9rem;
   line-height: 1.7;
-  color: var(--grey-300);
+  color: var(--text-grey);
   max-width: 520px;
 }
 
@@ -589,27 +639,27 @@ html, body {
   font-size: 0.9rem;
   font-weight: 200;
   letter-spacing: 0.04em;
-  color: var(--white);
+  color: var(--text-grey);
 }
 
 .about-subheading-2{
   font-size: 0.9rem;
   font-weight: 200;
   letter-spacing: 0.04em;
-  color: var(--white);
+  color: var(--text-grey);
   text-align: left;
 }
 
 .about-block-text {
   font-size: 0.87rem;
   line-height: 1.65;
-  color: var(--grey-300);
+  color: var(--text-grey);
 }
 
 .about-clients {
   font-size: 0.87rem;
   letter-spacing: 0.02em;
-  color: var(--grey-300);
+  color: var(--white);
   text-decoration: none;
   letter-spacing: 0.38em;
   text-align: left;
@@ -786,6 +836,9 @@ contact-description {
     background-position: center top;
     align-items: flex-end;
     padding-bottom: 3rem;
+  }
+  .about-hero-name {
+    display: none;
   }
   .about-bg-content {
     padding: 2rem 1.5rem;
