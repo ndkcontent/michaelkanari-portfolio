@@ -686,7 +686,8 @@ html, body {
   font-weight: 300;
   font-size: clamp(2rem, 4.2vw, 3.4rem);
   line-height: 1.25;
-  color: var(--white);
+  color: var(--grey-300);
+  margin-top: 7rem;
 }
 
 .contact-icons {
@@ -701,7 +702,7 @@ html, body {
   justify-content: center;
   width: 64px;
   height: 64px;
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255, 255, 255, 0.488);
   border-radius: 50%;
   color: var(--text-grey);
   transition: color var(--transition), border-color var(--transition), transform var(--transition);
@@ -734,18 +735,32 @@ html, body {
   z-index: 1;
 }
 
-contact-description {
+/* ── Contact page: dark nav text for light background ── */
+.contact-bg .nav-logo,
+.contact-bg .nav-links a,
+.contact-bg .nav-socials a {
+  color: var(--grey-300);
+}
+.contact-bg .nav-links a:hover,
+.contact-bg .nav-socials a:hover {
+  color: var(--white);
+}
+.contact-bg .nav-links a.active {
+  color: var(--white);
+  border-bottom-color: var(--white);
+}
+
+.contact-description {
   font-size: 0.95rem;
-  color: var(--text-grey);
+  color: var(--grey-300);
   margin-top: 1rem;
-  letter-spacing: 0.22em;
 }
 
 .contact-page::before {
   content: '';
   position: absolute;
   inset: -100px;
-  background-image: url('MK5.png');
+  background-image: url('home.png');
   background-size: cover;
   background-position: center;
   filter: blur(08px) brightness(0.5);
