@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
     banner.setAttribute('role', 'dialog');
     banner.setAttribute('aria-label', 'Cookie consent');
     banner.innerHTML = `
-      <p>This site uses cookies to improve your browsing experience. <a href="contact.html">Learn more</a></p>
+      <p>This site uses cookies to improve your browsing experience.</a></p>
       <div class="cookie-actions">
         <button class="cookie-btn cookie-btn-decline" id="cookieDecline">Decline</button>
         <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button>
