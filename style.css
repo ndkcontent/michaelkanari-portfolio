@@ -773,7 +773,7 @@ html, body {
 
 @media (min-width: 901px) and (max-width: 1300px) {
   .about-bg-content {
-    margin-left: 6rem;
+    margin-left: 8rem;
     padding: 2.5rem;
   }
 }
