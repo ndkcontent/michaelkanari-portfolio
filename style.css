@@ -829,12 +829,6 @@ html, body {
     margin: 0 1.5rem;
   }
 
-  .page-section.about-page {
-    flex: none;
-    min-height: auto;
-    overflow-y: auto;
-  }
-
   .film-feature {
     padding: 0 1.5rem;
     margin: 1.5rem auto 3rem;
@@ -860,6 +854,8 @@ html, body {
   .about-bg-content {
     padding: 2rem 1.5rem;
     justify-content: flex-start;
+    margin-left: 0;
+    margin-bottom: 0;
   }
   .about-text {
     width: 100%;
