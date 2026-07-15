@@ -266,23 +266,12 @@ html, body {
   background: transparent;
   border: 1px solid rgba(255,255,255,0.22);
   box-shadow: 0 25px 70px rgba(0,0,0,0.35);
-  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), border-color 0.5s ease, box-shadow 0.5s ease;
-}
-.portfolio-card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(255,255,255,0.05);
-  box-shadow: 0 25px 70px rgba(0,0,0,0.55);
 }
 .portfolio-card img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0;
-  transition: opacity 0.3s ease, transform 0.7s cubic-bezier(0.4,0,0.2,1), filter 0.4s ease;
-}
-.portfolio-card:hover img {
   opacity: 1;
-  transform: scale(1.05);
   filter: brightness(0.65);
 }
 .portfolio-card::after {
@@ -291,10 +280,6 @@ html, body {
   inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,0.35), transparent 55%);
   pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.9s ease;
-}
-.portfolio-card:hover::after {
   opacity: 1;
 }
 .portfolio-card-label {
@@ -308,6 +293,35 @@ html, body {
   color: var(--grey-500);
   text-transform: uppercase;
   letter-spacing: 0.78em;
+}
+
+/* ── Portfolio card hover-reveal (mouse/trackpad only) ── */
+@media (hover: hover) and (pointer: fine) {
+  .portfolio-card {
+    transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), border-color 0.5s ease, box-shadow 0.5s ease;
+  }
+  .portfolio-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255,255,255,0.05);
+    box-shadow: 0 25px 70px rgba(0,0,0,0.55);
+  }
+  .portfolio-card img {
+    opacity: 0;
+    filter: none;
+    transition: opacity 0.3s ease, transform 0.7s cubic-bezier(0.4,0,0.2,1), filter 0.4s ease;
+  }
+  .portfolio-card:hover img {
+    opacity: 1;
+    transform: scale(1.05);
+    filter: brightness(0.65);
+  }
+  .portfolio-card::after {
+    opacity: 0;
+    transition: opacity 0.9s ease;
+  }
+  .portfolio-card:hover::after {
+    opacity: 1;
+  }
 }
 
 /* ── Gallery / Category Pages ──────────────── */
