@@ -212,13 +212,6 @@ html, body {
   animation: blurIn 2.0s cubic-bezier(0.4,0,0.2,1) 2.00s forwards;
 }
 
-.page-section {
-  position: relative;
-  z-index: 1;
-  flex: 1;
-  padding-top: var(--nav-height);
-  box-sizing: border-box;
-}
 /* ── Portfolio ──────────────────────────── */
 .portfolio-page-wrap {
   position: relative;
@@ -883,3 +876,86 @@ contact-description {
     min-height: 260px;
   }
  }
+
+/* ── Cookie Banner ──────────────────────────── */
+.cookie-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.1rem 2.5rem;
+  background: rgba(10,10,10,0.94);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.5s cubic-bezier(0.4,0,0.2,1), opacity 0.5s cubic-bezier(0.4,0,0.2,1);
+}
+.cookie-banner.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+.cookie-banner p {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: var(--grey-300);
+  margin: 0;
+}
+.cookie-banner a {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.cookie-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+.cookie-btn {
+  padding: 0.6rem 1.4rem;
+  font-size: 0.82rem;
+  font-weight: 400;
+  border-radius: 999px;
+  white-space: nowrap;
+  transition: color var(--transition), background var(--transition), border-color var(--transition);
+}
+.cookie-btn-accept {
+  color: var(--black);
+  background: var(--white);
+  border: 1px solid var(--white);
+}
+.cookie-btn-accept:hover {
+  background: var(--grey-300);
+}
+.cookie-btn-decline {
+  color: var(--grey-300);
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.25);
+}
+.cookie-btn-decline:hover {
+  color: var(--white);
+  border-color: rgba(255,255,255,0.5);
+}
+
+@media (max-width: 700px) {
+  .cookie-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.25rem 1.5rem;
+  }
+  .cookie-actions {
+    width: 100%;
+  }
+  .cookie-btn {
+    flex: 1;
+    text-align: center;
+  }
+}

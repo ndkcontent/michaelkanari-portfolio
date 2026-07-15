@@ -148,4 +148,31 @@ document.addEventListener('DOMContentLoaded', () => {
   initLightbox(galleryImages, 'image');
   initLightbox(galleryVideos, 'video');
 
+  /* ── Cookie banner ───────────────────────────── */
+  if (!localStorage.getItem('mk_cookie_consent')) {
+    const banner = document.createElement('div');
+    banner.className = 'cookie-banner';
+    banner.setAttribute('role', 'dialog');
+    banner.setAttribute('aria-label', 'Cookie consent');
+    banner.innerHTML = `
+      <p>This site uses cookies to improve your browsing experience. <a href="contact.html">Learn more</a></p>
+      <div class="cookie-actions">
+        <button class="cookie-btn cookie-btn-decline" id="cookieDecline">Decline</button>
+        <button class="cookie-btn cookie-btn-accept" id="cookieAccept">Accept</button>
+      </div>
+    `;
+    document.body.appendChild(banner);
+
+    setTimeout(() => banner.classList.add('show'), 1200);
+
+    function hideCookieBanner(choice) {
+      localStorage.setItem('mk_cookie_consent', choice);
+      banner.classList.remove('show');
+      setTimeout(() => banner.remove(), 500);
+    }
+
+    document.getElementById('cookieAccept').addEventListener('click', () => hideCookieBanner('accepted'));
+    document.getElementById('cookieDecline').addEventListener('click', () => hideCookieBanner('declined'));
+  }
+
 });
