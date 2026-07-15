@@ -220,23 +220,18 @@ html, body {
   box-sizing: border-box;
 }
 /* ── Portfolio ──────────────────────────── */
-.portfolio-section {
+.portfolio-page-wrap {
   position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-image: url('MK0.JPG');
+  background-image: url('MK6.png');
   background-size: cover;
   background-position: center 22%;
 }
 
-.portfolio-section::before {
-  content: '';
+.portfolio-overlay {
   position: absolute;
   inset: 0;
   z-index: 0;
+  pointer-events: none;
   background: linear-gradient(
     to bottom,
     rgba(0,0,0,0.25) 0%,
@@ -244,7 +239,14 @@ html, body {
     rgba(0,0,0,0.08) 70%,
     rgba(0,0,0,0.4) 100%
   );
-  pointer-events: none;
+}
+
+.portfolio-section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .portfolio-grid {
@@ -368,7 +370,7 @@ html, body {
   font-weight: 300;
   font-size: clamp(.7rem, 0.9vw, 1.6rem);
   color: var(--white);
-  margin: 0 4rem 2rem;
+  margin: 5rem 4rem 2rem;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.6em;
@@ -513,17 +515,22 @@ html, body {
 }
 
 /* ── Home Page (new design) ─────────────────── */
+.about-page-wrap {
+  position: relative;
+  background-image: url('MK0.JPG');
+  background-size: cover;
+  background-position: center center;
+}
+
 .about-page {
   position: relative;
   min-height: 100vh;
-  background-image: url('home.png');
-  background-size: cover;
-  background-position: center center;
   display: flex;
   align-items: center;
   padding-top: var(--nav-height);
   box-sizing: border-box;
 }
+
 
 
 .about-hero-name {
@@ -561,7 +568,7 @@ html, body {
   align-items: center;
   gap: 0.5rem;
   align-self: flex-start;
-  color: var(--text-grey);
+  color: var(--grey-300);
   font-size: 0.78rem;
   font-weight: 400;
   letter-spacing: 0.15em;
@@ -614,7 +621,7 @@ html, body {
 .about-headline {
   font-family: var(--font-serif);
   text-transform: uppercase;
-  font-weight: 200;
+  font-weight: 300;
   font-size: clamp(1.5rem, 3.2vw, 2.8rem);
   animation: blurIn 2.0s cubic-bezier(0.4,0,0.2,1) 0.3s forwards;
   line-height: 1.2;
@@ -625,7 +632,7 @@ html, body {
 .about-bio {
   font-size: 0.9rem;
   line-height: 1.7;
-  color: var(--text-grey);
+  color: var(--grey-300);
   max-width: 520px;
 }
 
@@ -639,27 +646,27 @@ html, body {
   font-size: 0.9rem;
   font-weight: 200;
   letter-spacing: 0.04em;
-  color: var(--text-grey);
+  color: var(--white);
 }
 
 .about-subheading-2{
   font-size: 0.9rem;
   font-weight: 200;
   letter-spacing: 0.04em;
-  color: var(--text-grey);
+  color: var(--white);
   text-align: left;
 }
 
 .about-block-text {
   font-size: 0.87rem;
   line-height: 1.65;
-  color: var(--text-grey);
+  color: var(--grey-300);
 }
 
 .about-clients {
   font-size: 0.87rem;
   letter-spacing: 0.02em;
-  color: var(--white);
+  color: var(--grey-300);
   text-decoration: none;
   letter-spacing: 0.38em;
   text-align: left;
@@ -832,8 +839,10 @@ contact-description {
     gap: 1.5rem;
     margin: 0 1.5rem;
   }
-  .about-page {
+  .about-page-wrap {
     background-position: center top;
+  }
+  .about-page {
     align-items: flex-end;
     padding-bottom: 3rem;
   }
@@ -860,7 +869,7 @@ contact-description {
     width: 56px;
     height: 56px;
   }
-  .portfolio-section {
+  .portfolio-page-wrap {
     background-position: center 15%;
   }
   .portfolio-grid {
